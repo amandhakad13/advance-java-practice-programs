@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class CreateTable {
+public class AlterQuery1 {
 
 	public static void main(String[] args) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_jdbc", "root", "admin");
 			Statement stmt = con.createStatement();
-			stmt.execute("CREATE TABLE person(id INT PRIMARY KEY, f_name VARCHAR(50), l_name VARCHAR(50), age INT)");
-			System.out.println("Table Created Successfully");
+			stmt.execute("ALTER TABLE person ADD dob VARCHAR(20)");
+			System.out.println("Column Add Successfully");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
