@@ -12,7 +12,7 @@ public class CreateTable {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test_jdbc", "root", "admin");
 			Statement stmt = con.createStatement();
-			stmt.execute("CREATE TABLE person(id INT PRIMARY KEY, f_name VARCHAR(50), l_name VARCHAR(50), age INT)");
+			stmt.execute("CREATE TABLE employee(id INT PRIMARY KEY, f_name VARCHAR(50), l_name VARCHAR(50))");
 			System.out.println("Table Created Successfully");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
